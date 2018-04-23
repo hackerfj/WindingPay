@@ -23,27 +23,28 @@ dependencies {<br/>
 -----------------------------<br/>
 PayFactory.createPay(PayFactory.ALPAY,MainActivity.this,“支付宝订单KEY”)<br/>
 .setOnResultListener(new IPayBean.OnResultListener() {<br/>
-    @Override
-    public void onPaySuccess() {
-        //TODO 支付宝支付支付成功回调
-    }
-    @Override
-    public void onPayFail() {
-        //TODO 支付宝支付支付失败回调
-    }
-});
-----------------------------
-#微信支付 使用方式
-----------------------------
-//微信支付
-PayFactory.createPay(PayFactory.WXPAY, MainActivity.this,”微信订单KEY“).setOnResultListener(new IPayBean.OnResultListener() {
-    @Override
-    public void onPaySuccess() {
-        //TODO 微信支付支付成功回调
-    }
-
-    @Override
-    public void onPayFail() {
-         //TODO 微信支付支付失败回调
-    }
-}));
+    @Override<br/>
+    public void onPaySuccess() {<br/>
+        //TODO 支付宝支付支付成功回调<br/>
+    }<br/>
+    @Override<br/>
+    public void onPayFail() {<br/>
+        //TODO 支付宝支付支付失败回调<br/>
+    }<br/>
+});<br/>
+----------------------------<br/>
+#微信支付 使用方式<br/>
+----------------------------<br/>
+//微信支付<br/>
+PayFactory.createPay(PayFactory.WXPAY, MainActivity.this,”微信订单KEY“)<br/>
+  .setOnResultListener(new IPayBean.OnResultListener() {<br/>
+    @Override<br/>
+    public void onPaySuccess() {<br/>
+        //TODO 微信支付支付成功回调<br/>
+    }<br/>
+<br/>
+    @Override<br/>
+    public void onPayFail() {<br/>
+         //TODO 微信支付支付失败回调<br/>
+    }<br/>
+}));<br/>
