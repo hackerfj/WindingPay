@@ -8,10 +8,10 @@
 
 将其添加到存储库末尾的根build.gradle中：<br/>
 allprojects {<br/>
-  repositories {<br/>
-    ...<br/>
-    maven { url 'https://jitpack.io' }<br/>
-  }<br/>
+&nbsp;&nbsp;&nbsp;  repositories {<br/>
+&nbsp;&nbsp;    ...<br/>
+&nbsp;&nbsp;    maven { url 'https://jitpack.io' }<br/>
+&nbsp;&nbsp;  }<br/>
 }<br/>
 
 第2步.添加依赖关系<br/>
