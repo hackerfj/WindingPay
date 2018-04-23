@@ -9,14 +9,14 @@
 将其添加到存储库末尾的根build.gradle中：<br/>
 allprojects {<br/>
 &nbsp;&nbsp;&nbsp;  repositories {<br/>
-&nbsp;&nbsp;    ...<br/>
-&nbsp;&nbsp;    maven { url 'https://jitpack.io' }<br/>
+&nbsp;&nbsp;&nbsp;    ...<br/>
+&nbsp;&nbsp;&nbsp;    maven { url 'https://jitpack.io' }<br/>
 &nbsp;&nbsp;  }<br/>
 }<br/>
 
 第2步.添加依赖关系<br/>
 dependencies {<br/>
-        compile 'com.github.luckyfj:WindingPay:v1.0.0'<br/>
+&nbsp;&nbsp;        compile 'com.github.luckyfj:WindingPay:v1.0.0'<br/>
 }<br/>
 <br/>
 #支付宝支付 使用方法<br/>
@@ -25,11 +25,11 @@ PayFactory.createPay(PayFactory.ALPAY,MainActivity.this,“支付宝订单KEY”
 .setOnResultListener(new IPayBean.OnResultListener() {<br/>
     @Override<br/>
     public void onPaySuccess() {<br/>
-        //TODO 支付宝支付支付成功回调<br/>
+ &nbsp;&nbsp;       //TODO 支付宝支付支付成功回调<br/>
     }<br/>
     @Override<br/>
     public void onPayFail() {<br/>
-        //TODO 支付宝支付支付失败回调<br/>
+&nbsp;&nbsp;        //TODO 支付宝支付支付失败回调<br/>
     }<br/>
 });<br/>
 ----------------------------<br/>
@@ -40,11 +40,11 @@ PayFactory.createPay(PayFactory.WXPAY, MainActivity.this,”微信订单KEY“)<
   .setOnResultListener(new IPayBean.OnResultListener() {<br/>
     @Override<br/>
     public void onPaySuccess() {<br/>
-        //TODO 微信支付支付成功回调<br/>
+&nbsp;&nbsp;        //TODO 微信支付支付成功回调<br/>
     }<br/>
 <br/>
     @Override<br/>
     public void onPayFail() {<br/>
-         //TODO 微信支付支付失败回调<br/>
+&nbsp;&nbsp;         //TODO 微信支付支付失败回调<br/>
     }<br/>
 }));<br/>
