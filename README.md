@@ -6,7 +6,7 @@
 之后将集成银联等支付方式
 
 
-将其添加到存储库末尾的根build.gradle中：
+将其添加到存储库末尾的根build.gradle中：<br/>
 allprojects {
   repositories {
     ...
