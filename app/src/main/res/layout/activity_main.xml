@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.magicsoft.geekfj.windingpay.MainActivity">
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="60dp"
+        android:textColor="#000000"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="风鼎科技支付插件"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_pay_wechat"
+        android:layout_margin="20dp"
+        android:text="微信支付"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_pay_ali"
+        android:layout_margin="20dp"
+        android:text="支付宝支付 "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
