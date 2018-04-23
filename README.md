@@ -7,21 +7,22 @@
 
 
 将其添加到存储库末尾的根build.gradle中：<br/>
-allprojects {
-  repositories {
-    ...
-    maven { url 'https://jitpack.io' }
-  }
-}
+allprojects {<br/>
+  repositories {<br/>
+    ...<br/>
+    maven { url 'https://jitpack.io' }<br/>
+  }<br/>
+}<br/>
 
-第2步.添加依赖关系
-dependencies {
-        compile 'com.github.luckyfj:WindingPay:v1.0.0'
-}
-
-#支付宝支付 使用方法
------------------------------
-PayFactory.createPay(PayFactory.ALPAY,MainActivity.this,“支付宝订单KEY”).setOnResultListener(new IPayBean.OnResultListener() {
+第2步.添加依赖关系<br/>
+dependencies {<br/>
+        compile 'com.github.luckyfj:WindingPay:v1.0.0'<br/>
+}<br/>
+<br/>
+#支付宝支付 使用方法<br/>
+-----------------------------<br/>
+PayFactory.createPay(PayFactory.ALPAY,MainActivity.this,“支付宝订单KEY”)<br/>
+.setOnResultListener(new IPayBean.OnResultListener() {<br/>
     @Override
     public void onPaySuccess() {
         //TODO 支付宝支付支付成功回调
