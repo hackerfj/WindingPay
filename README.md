@@ -48,3 +48,47 @@ PayFactory.createPay(PayFactory.WXPAY, MainActivity.this,”微信订单KEY“)<
 &nbsp;&nbsp;         //TODO 微信支付支付失败回调<br/>
     }<br/>
 }));<br/>
+
+
+微信支付回调配置
+
+新建一个wxapi文件夹
+然后新建类
+
+public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
+	
+    private IWXAPI api;
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    	api = WXAPIFactory.createWXAPI(this,"wx18eaff444811186d");
+        api.handleIntent(getIntent(), this);
+    }
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		setIntent(intent);
+        api.handleIntent(intent, this);
+	}
+
+	@Override
+	public void onReq(BaseReq req) {
+	}
+
+	@Override
+	public void onResp(BaseResp resp) {
+		if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
+			Log.i("SLL",""+resp.errCode);
+			if(resp.errCode == 0){
+				Toast.makeText(this, "支付成功!", Toast.LENGTH_SHORT).show();
+			}else if(resp.errCode == -2){
+				Toast.makeText(this, "支付取消！", Toast.LENGTH_SHORT).show();
+			}
+			finish();
+		}
+	}
+}
+
+
