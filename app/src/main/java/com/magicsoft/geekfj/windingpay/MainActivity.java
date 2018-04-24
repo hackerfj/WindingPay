@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSONObject;
 import com.magicsoft.geekfj.windingfjpay.IPayBean;
 import com.magicsoft.geekfj.windingfjpay.PayFactory;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static String WXKEY = "wx18eaff444811186d";
     private Button AliPay;
     private Button WeChatPay;
     private String WechatPayData;
@@ -22,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
         initEvent();
     }
     private void initEvent(){
-        WechatPayData = "";
-        AliPayData = "alipay_sdk=alipay-sdk-php-20161101&amp;app_id=2017090108499528&amp;biz_content=%7B%22body%22%3A%222017%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%2B%E6%96%B0%E5%95%86%E4%B8%9A%E5%B3%B0%E4%BC%9A%22%2C%22subject%22%3A+%222017%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%2B%E6%96%B0%E5%95%86%E4%B8%9A%E5%B3%B0%E4%BC%9A%22%2C%22out_trade_no%22%3A+%22201709240935480fb79abe88882e4d63%22%2C%22timeout_express%22%3A+%2230m%22%2C%22total_amount%22%3A+%220.01%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%7D&amp;charset=UTF-8&amp;format=json&amp;method=alipay.trade.app.pay&amp;notify_url=http%3A%2F%2Fapi.hupovc.com.cn%2FAliPAY%2FAsynchronousNotification&amp;sign_type=RSA2&amp;timestamp=2017-09-24+09%3A35%3A48&amp;version=1.0&amp;sign=Z4KBZjPnMor71L3URjeyoaykcQaPouWBW5X4XY9LGk1Lkdmyu1rZSmQaJkklYDFwvfJZiYwPiIa8AL%2BusRepxgUemfstQAZyHCZ10UyX41fOGzVwf%2BjWeASl40IJ2xAOfIFh2njAxMzQzQHO6g4PNUTpRtA7W%2FBhn7DlOpJZkX4A8AEjX2d96gR1wMdO66qEU7XKN0Q6ckm1qqrqkNZL%2BE3DoPKwfqdeg5wnWSmG9%2B%2BqRfNz%2BpDQmUep%2B1h0PNYdLZxNTEeKSyxDOjzS4U%2BufUQYiLQ925vg3hwzp7gDS%2F%2BXbLOXIJ4Bf0nczIZiTf4wPLE%2FVzbPTBax3qscitcvUg%3D%3D";
+        WechatPayData = "{\"appid\":\"wx18eaff444811186d\",\"partnerid\":\"1488654852\",\"prepayid\":\"wx24092447509486e511cff3d51164964171\",\"packageName\":\"Sign=WXPay\",\"noncestr\":\"Rdv0Q8FGA76n2G9b\",\"timestamp\":1524533087,\"sign\":\"3E4FA872CEB9A5BB2D75BAC388FD7E8F\"}";
+
+        AliPayData = "alipay_sdk=alipay-sdk-php-20161101&app_id=2017090108499528&biz_content=%7B%22body%22%3A%22%E6%B5%8B%E8%AF%95%E6%B4%BB%E5%8A%A8%22%2C%22subject%22%3A+%22%E6%B5%8B%E8%AF%95%E6%B4%BB%E5%8A%A8%22%2C%22out_trade_no%22%3A+%2220180424090807f4216ca694f411%22%2C%22timeout_express%22%3A+%2230m%22%2C%22total_amount%22%3A+%2215%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=http%3A%2F%2Fapi.hupovc.com.cn%2FAliPAY%2FAsynchronousNotification&sign_type=RSA2&timestamp=2018-04-24+09%3A08%3A07&version=1.0&sign=Z7VtVMGPdTqfyiJjZVoxBeotjJ%2Bue5Swy6A11KkhYAJvwjjezwlEYZxKZnasGQmirfqxSjgiKTzvkMUTYuZm8z%2FsIo67L1E1Ce30WwWGkK1kK7VPV5qzHXQnMyfF3Dr%2Bw5JFZ9GRQ%2FBDky8rpGQbGNYrgYV7cNGSNETnMu2lpOlNKkCijZcc3j2sb%2FNn9kAwX2bGL0i6Q9bdI%2FcjU4T%2BDNJfSdRALqNnU7z9GTYiBJ9PhtmVsB%2BpBsZwoUikpb%2BoMpoCVnU0YNawC3JF41Jd7DMaGPhaY4DTe8ABa11EYH4LHNdqfvSjd1EaYE3AVOARb425%2Bs66TpnQTtoj3i1vgg%3D%3D";
         AliPay = findViewById(R.id.btn_pay_ali);
         WeChatPay = findViewById(R.id.btn_pay_wechat);
 

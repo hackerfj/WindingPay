@@ -1,7 +1,7 @@
 package com.magicsoft.geekfj.windingfjpay;
 
 /**
- * @author 沈小建 on 2016/10/13 0013.
+ * @author 风鼎科技
  */
 
 public class AlpayBean {

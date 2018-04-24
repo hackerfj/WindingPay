@@ -13,7 +13,7 @@ import com.alipay.sdk.app.PayTask;
 import java.util.Map;
 
 /**
- * Created by ADongdpa on 16/3/22.
+ * Created 风鼎科技
  */
 public class ALPay extends IPayBean {
 

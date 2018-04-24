@@ -8,7 +8,7 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 /**
  * 微信支付
- * Created by ADongdpa on 16/5/19.
+ * Created 风鼎科技
  */
 public class WXPay extends IPayBean {
 

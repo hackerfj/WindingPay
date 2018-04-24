@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSON;
 
 
 /**
- * @author 沈小建 on 2016/12/5 0005.
+ * @author 风鼎科技
  */
 
 public class PayFactory {

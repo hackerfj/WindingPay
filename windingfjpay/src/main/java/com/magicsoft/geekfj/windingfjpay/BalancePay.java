@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 
 /**
- * @author 沈小建 on 2016/12/5 0005.
+ * @author 风鼎科技
  */
 
 public class BalancePay extends IPayBean {
