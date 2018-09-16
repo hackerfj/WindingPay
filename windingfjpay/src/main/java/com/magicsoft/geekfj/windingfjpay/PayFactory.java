@@ -24,13 +24,7 @@ public class PayFactory {
                 return new ALPay(context, content);
             case WXPAY:
                 WxPayBean wxPayBean = JSON.parseObject(content, WxPayBean.class);
-                Log.i("SLL",""+wxPayBean.getAppid());
-                Log.i("SLL",""+wxPayBean.getPartnerid());
-                Log.i("SLL",""+wxPayBean.getPrepayid());
-                Log.i("SLL",""+wxPayBean.getPackageX());
-                Log.i("SLL",""+wxPayBean.getNoncestr());
-                Log.i("SLL",""+wxPayBean.getTimestamp());
-                Log.i("SLL",""+wxPayBean.getSign());
+//                wxPayBean.setPackageX("Sign=WXPay");
                 return new WXPay(context, wxPayBean);
         }
         return null;

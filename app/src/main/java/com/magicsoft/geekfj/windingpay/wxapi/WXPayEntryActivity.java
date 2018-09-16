@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.magicsoft.geekfj.windingfjpay.IPayBean;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
@@ -16,7 +17,20 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 	
     private IWXAPI api;
-	
+
+	public IPayBean.OnResultListener listener;
+
+	public void setOnResultListener(IPayBean.OnResultListener listener) {
+		this.listener = listener;
+	}
+
+	public interface OnResultListener {
+
+		void onPaySuccess();
+
+		void onPayFail();
+	}
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +54,10 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
 		if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
 			Log.i("SLL",""+resp.errCode);
 			if(resp.errCode == 0){
+				listener.onPaySuccess();
 				Toast.makeText(this, "支付成功!", Toast.LENGTH_SHORT).show();
 			}else if(resp.errCode == -2){
+				listener.onPayFail();
 				Toast.makeText(this, "支付取消！", Toast.LENGTH_SHORT).show();
 			}
 			finish();
